@@ -10,10 +10,10 @@ class Navigation extends React.Component{
     render () {
         return (
 
-            <Navbar expand="lg" className="bg-danger bg-gradient mb-3 ">
-                <Container className='p-2'>
-                    <Navbar.Brand href="#home" className='fs-3 bg-dark text-danger rounded p-3'>Movie App</Navbar.Brand>
-                    <Form inline>
+            <Navbar expand="lg" className="bg-light bg-gradient mb-3 ">
+                <Container className='p-1'>
+                    <Navbar.Brand href="#home" className='fs-3 rounded p-1'>Movie App</Navbar.Brand>
+                    <Form >
                         <Row>
                             <Col xs="auto">
                                 <Form.Control

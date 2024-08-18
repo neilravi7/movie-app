@@ -1,17 +1,5 @@
 export const data = [
   {
-    id: 1,
-    title: "Beetlejuice",
-    year: "1988",
-    runtime: "92",
-    genres: ["Comedy", "Fantasy"],
-    director: "Tim Burton",
-    actors: "Alec Baldwin, Geena Davis, Annie McEnroe, Maurice Page",
-    plot: 'A couple of recently deceased ghosts contract the services of a "bio-exorcist" in order to remove the obnoxious new owners of their house.',
-    posterUrl:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/7/76/Beetlejuice_%281988_film_poster%29.png/220px-Beetlejuice_%281988_film_poster%29.png",
-  },
-  {
     id: 2,
     title: "The Cotton Club",
     year: "1984",
@@ -94,7 +82,7 @@ export const data = [
     actors: "Guy Pearce, Carrie-Anne Moss, Joe Pantoliano, Mark Boone Junior",
     plot: "A man juggles searching for his wife's murderer and keeping his short-term memory loss from being an obstacle.",
     posterUrl:
-      "https://images-na.ssl-images-amazon.com/images/M/MV5BNThiYjM3MzktMDg3Yy00ZWQ3LTk3YWEtN2M0YmNmNWEwYTE3XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+      "https://upload.wikimedia.org/wikipedia/en/c/c7/Memento_poster.jpg",
   },
   {
     id: 9,
@@ -106,7 +94,7 @@ export const data = [
     actors: "François Cluzet, Omar Sy, Anne Le Ny, Audrey Fleurot",
     plot: "After he becomes a quadriplegic from a paragliding accident, an aristocrat hires a young man from the projects to be his caregiver.",
     posterUrl:
-      "http://ia.media-imdb.com/images/M/MV5BMTYxNDA3MDQwNl5BMl5BanBnXkFtZTcwNTU4Mzc1Nw@@._V1_SX300.jpg",
+      "https://upload.wikimedia.org/wikipedia/en/9/93/The_Intouchables.jpg",
   },
   {
     id: 10,
