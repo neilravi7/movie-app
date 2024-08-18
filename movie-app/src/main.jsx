@@ -2,11 +2,12 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App.jsx'
-import movies from './reducers/index.js';
+// import movies from './reducers/index.js';
+import rootReducer from './reducers/index.js';
 import { legacy_createStore as createStore } from 'redux';
 
-const store = createStore(movies);
-console.log(store);
+const store = createStore(rootReducer);
+console.log("store: ", store);
 
 // console.log("Before State: ", store.getState());
 
