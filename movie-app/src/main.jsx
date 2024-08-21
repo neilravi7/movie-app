@@ -2,11 +2,47 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App.jsx'
-// import movies from './reducers/index.js';
+// import movies from './reducers/index.js';        
 import rootReducer from './reducers/index.js';
-import { legacy_createStore as createStore } from 'redux';
+import { thunk } from 'redux-thunk';
+import { legacy_createStore as createStore, applyMiddleware } from 'redux';
 
-const store = createStore(rootReducer);
+
+// -------------------------------------------Middleware --------------------------
+// const logger = function ({dispatch, getState}) {
+//   return function (next) {
+//     return function (action) {
+//       //middleware code
+//       console.log("Action type: ", action.type);
+//       next(action);
+//     }
+//   }
+
+// }
+
+
+const logger = ({dispatch, getState}) => (next) => (action) => {
+  //middleware code
+  // console.log("Action type: ", action.type);
+  if(typeof action !== 'function'){
+    console.log("ACTION_TYPE: ", action.type);
+  }
+  next(action);
+}
+
+
+// custom thunk middleware
+// const thunk = ({dispatch, getState}) => (next => (action) => {
+//   if(typeof action == 'function'){
+//     action(dispatch);
+//     return;
+//   }
+//   next(action);
+// })
+
+//-----------------------------Middleware-------------------------------------------
+
+const store = createStore(rootReducer, applyMiddleware(logger, thunk));  
 console.log("store: ", store);
 
 // console.log("Before State: ", store.getState());

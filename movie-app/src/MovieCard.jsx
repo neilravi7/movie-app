@@ -22,16 +22,16 @@ class MovieCard extends React.Component {
             <Card className='p-2'>
                 <Row className='justify-content-center'>
                     <Col md={4}>
-                        <Card.Img variant='top' src={movie.posterUrl} height={350} />
+                        <Card.Img variant='top' src={movie.Poster} height={350} />
                     </Col>
                     <Col md="6">
                         <Card.Body>
-                            <Card.Title>{movie.title}</Card.Title>
+                            <Card.Title>{movie.Title}</Card.Title>
                             <Card.Text>
-                                {movie.plot}
+                                {movie.Plot}
                             </Card.Text>
                             <Card.Text>
-                                <span> {movie.genres} </span> <span>{movie.director}</span>
+                                <span> {movie.Genres} </span> <span>{movie.Director}</span>
                             </Card.Text>
                             <div className='d-flex'>
                                 {isFavouriteMovie ? (<Button variant="danger" onClick={() => this.handleUnfavouriteClick()} >Unfavorite</Button>):(<Button variant="primary" onClick={() => this.handleFavouriteClick()}>Favorite</Button>) }

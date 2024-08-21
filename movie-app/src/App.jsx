@@ -25,7 +25,7 @@ class App extends React.Component {
   }
 
   isMovieFavourites(movie){
-    const { movies } = this.props.store.getState();
+    const { movies } = this.props.store.getState(); // {movies:{}, search:{}}
     const index = movies.favourites.indexOf(movie);
     if(index !== -1){
       return true;
@@ -34,11 +34,14 @@ class App extends React.Component {
   }
 
   render() {
-    const {movies} = this.props.store.getState();
+    const {movies, search} = this.props.store.getState(); //movies:{} search:{}
     const { list, favourites } = movies;
     return (
       <>
-        <Navigation />
+        <Navigation 
+          search={search}
+          dispatch={this.props.store.dispatch} 
+        />
         <Container className='bg-opacity-10'>
           <Row>
             <Col md={12}>

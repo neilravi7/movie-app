@@ -2,7 +2,9 @@ import { combineReducers } from "redux";
 import { 
     ADD_MOVIES, 
     ADD_FAVOURITE, 
-    REMOVE_FROM_FAVOURITE 
+    REMOVE_FROM_FAVOURITE,
+    ADD_MOVIE_TO_LIST,
+    ADD_SEARCH_RESULT
 } from "../action"; // 
 
 const initialMovieState = {
@@ -29,17 +31,37 @@ export function movies(state = initialMovieState, action) {
           (movieObj) => movieObj.title !== action.movie.title
         ),
       };
+    case ADD_MOVIE_TO_LIST:
+      state.list = [action.movie, ...state.list]
+      return{
+        ...state,
+        list:state.list
+      }
     default:
       return state;
   }
 }
 
 const initialSearchState = {
-    result:{}
+    result:{},
+    showSearchResult: false
 };
 
 export function search (state = initialSearchState, action){
-    return state;
+  
+  switch (action.type){
+    case ADD_SEARCH_RESULT:
+      
+    return{
+        ...state,
+        result:action.movie,
+        showSearchResult:true
+    }
+
+    default:
+      return state
+
+  }
 }
 
 const initialRootState = {
@@ -47,6 +69,7 @@ const initialRootState = {
     search:initialSearchState
 }
 
+// User Defined rootReducer
 // export default function rootReducer (state=initialRootState, action){
 //     return {
 //         movies:movies(state.movies, action),
@@ -59,4 +82,4 @@ export default combineReducers(
         movies,
         search
     }
-);
+);      
